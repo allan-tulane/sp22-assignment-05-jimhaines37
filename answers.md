@@ -53,7 +53,9 @@ Greedy solution will not consider all possible combinations, it will always take
 
 If we use dynamic programming to solve this problem, we should find all possible combinations of coins that equal N and then select the solution which requires the least amount of coins. We could store each combination in a tuple that contains a list of coin values and the number of coins used, like: ([10, 1, 1, 1, 1], 5), ([8, 6], 2), and then select the tuple whos second value is the smallest.
 
-W(n) = W(n)
+if n = N and m = numCoins
+
+W(n) = W(n*m)
 
 S(n) = S(n)
 
@@ -64,6 +66,7 @@ S(n) = S(n)
 Optimal substructure property for MED is:
 
 {MED(S[1:], T[1:]), if S[0] = T[0]
+
 1 + min(MED(S, T[1:]), MED(S[1:], T[1:]), MED(S[1:], T)), otherwise}
 
 where each MED function represents an insertion, a substitution, and a deletion, respectively
